@@ -107,7 +107,8 @@ def transcribe(audio_path, model_name, output_path, format):
 def main():
     parser = argparse.ArgumentParser(description="Transcribe audio using PhoWhisper")
     parser.add_argument("audio", help="Input audio file path")
-    parser.add_argument("-m", "--model", default="vinai/PhoWhisper-tiny", help="PhoWhisper model to use")
+    parser.add_argument("-m", "--model", default="vinai/PhoWhisper-tiny", help="PhoWhisper model to use",
+                        choices="vinai/PhoWhisper-tiny vinai/PhoWhisper-base vinai/PhoWhisper-small vinai/PhoWhisper-medium vinai/PhoWhisper-large".split())
     parser.add_argument("-o", "--output", help="Output file path")
     parser.add_argument("-f", "--format", choices=["txt", "srt"], default="txt", help="Output format (txt or srt)")
 
